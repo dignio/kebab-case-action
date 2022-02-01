@@ -6,7 +6,7 @@
 
 This action transforms a string to kebab, camel and snake case strings. Information: [https://en.wikipedia.org/wiki/Letter_case#Special_case_styles](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles)
 
-Behind the hood we are using [Lodash](https://lodash.com/) to perform these actions.
+Under the hood we are using [Lodash](https://lodash.com/) to perform these actions.
 
 ## Usage
 
