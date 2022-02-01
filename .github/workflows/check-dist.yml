@@ -38,14 +38,14 @@ jobs:
 
       - name: Post information to the PR if it fails
         uses: mshick/add-pr-comment@v1
-        if: ${{ steps.diff.outputs.failure }} == true
+        if: ${{ steps.diff.outputs.failure }} == "true"
         with:
           message: |
-            echo "Did you forget to add the dist folder?"
-            echo "Please run 'npm run build', and commit the dist/ folder."
+            Did you forget to add the dist folder?
+            Please run 'npm run build', and commit the dist/ folder.
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
 
       - name: Exit if failure
-        if: ${{ steps.diff.outputs.failure }} == true
+        if: ${{ steps.diff.outputs.failure }} == "true"
         run: exit 1
