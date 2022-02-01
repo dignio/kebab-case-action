@@ -1,0 +1,17 @@
+
+name: 'To letter case'
+description: 'Convert a string to kebab, camel and snake case'
+inputs:
+  string:
+    description: 'The string to transform'
+    required: true
+outputs:
+  kebab:
+    description: 'The kebab case string'
+  camel:
+    description: 'The camel case string'
+  snake:
+    description: 'The snake case string'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
