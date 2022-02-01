@@ -23,10 +23,10 @@ Get the output
 
 ```yaml
 - uses: ...
-  with:
-    kebab: ${{ steps.letter_case.outputs.kebab }}
-    camel: ${{ steps.letter_case.outputs.camel }}
-    snake: ${{ steps.letter_case.outputs.sname }}
+  run: |
+    echo "kebab: ${{ steps.letter_case.outputs.kebab }}"
+    echo "camel: ${{ steps.letter_case.outputs.camel }}"
+    echo "snake: ${{ steps.letter_case.outputs.snake }}"
 ```
 
 ## Run the code locally
