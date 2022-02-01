@@ -1,15 +1,9 @@
 name: Check if the dist has a diff
 
 on:
-  push:
-    branches:
-      - main
-    paths-ignore:
-      - '**.md'
   pull_request:
     paths-ignore:
       - '**.md'
-  workflow_dispatch:
 
 jobs:
   check-dist:
