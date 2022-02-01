@@ -51,22 +51,4 @@ npm run build
 INPUT_STRING=feature/branch-1337 node dist/index.js
 ```
 
-## Package for distribution
-
-GitHub Actions will run the entry point from the action.yml. Packaging assembles the code into one file that can be checked in to Git, enabling fast and reliable execution and preventing the need to check in node_modules.
-
-Actions are run from GitHub repos. Packaging the action will create a packaged action in the dist folder.
-
-Run build
-
-```bash
-npm run build
-```
-
-Since the packaged index.js is run from the dist folder.
-
-```bash
-git add dist
-```
-
 See the [actions tab](https://github.com/dignio/letter-case-action/actions) for runs of this action! :rocket:
