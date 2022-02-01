@@ -43,7 +43,7 @@ jobs:
           message: |
             Did you forget to add the dist folder? 
             Please run "npm run build", and commit the dist/ folder.
-          repo-token: ${{ secrets.DIGNIO_GH_APP_PRIVATE_KEY }}
+          repo-token: ${{ secrets.DIGNIO_SYSTEM_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
 
       - name: Exit if failure
