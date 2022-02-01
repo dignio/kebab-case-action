@@ -1,7 +1,7 @@
 # Letter case action
 
 <p align="center">
-  <a href="https://github.com/dignio/letter-case-action/actions"><img alt="letter-case-action status" src="https://github.com/dignio/letter-case-action/workflows/testing/badge.svg"></a>
+  <a href="https://github.com/dignio/letter-case-action/actions"><img alt="letter-case-action status" src="https://github.com/dignio/letter-case-action/actions/workflows/test.yml/badge.svg"></a>
 </p>
 
 This action transforms a string to kebab, camel and snake case strings. Information: [https://en.wikipedia.org/wiki/Letter_case#Special_case_styles](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles)
