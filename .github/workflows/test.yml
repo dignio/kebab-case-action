@@ -16,10 +16,23 @@ jobs:
     - run: npm test
 
   # check the output
-  test:
+  integration:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: ./
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Run the letter case action
+      uses: ./
+      id: letter_case
       with:
-        string: "feat/this is not.feasable?!"
+        string: "feature/branch-1337"
+    
+    - name: Check the letter case output
+      shell: bash
+      run: |
+        [ "${{ steps.letter_case.outputs.kebab }}" != "feature-branch-1337" ] && exit 1
+        [ "${{ steps.letter_case.outputs.camel }}" != "featureBranch1337" ] && exit 1
+        [ "${{ steps.letter_case.outputs.snake }}" != "feature_branch_1337" ] && exit 1
+
+        echo "Integration test works as expected"
