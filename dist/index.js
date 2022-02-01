@@ -17,7 +17,7 @@ function createCases(inputString) {
     };
 }
 
-(async function main() {
+function main() {
     try {
         const inputString = core.getInput('string');
         core.info('Converting string to kebab, camel, and snake case');
@@ -30,7 +30,9 @@ function createCases(inputString) {
     } catch (error) {
         core.setFailed(error.message);
     }
-})();
+}
+
+main();
 
 module.exports = { createCases };
 
