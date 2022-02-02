@@ -18,10 +18,10 @@ function createCases(inputString) {
 }
 
 function main() {
-    try {
-        const inputString = core.getInput('string');
-        core.info('Converting string to kebab, camel, and snake case');
+    const inputString = core.getInput('string');
+    core.info('Converting string to kebab, camel, and snake case');
 
+    try {
         const { kebab, camel, snake } = createCases(inputString);
 
         core.setOutput('kebab', kebab);
