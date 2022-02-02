@@ -1,0 +1,47 @@
+{
+  "name": "letter-case-action",
+  "version": "1.0.0",
+  "description": "JavaScript letter case action",
+  "main": "index.js",
+  "scripts": {
+    "build": "ncc build index.js -o dist --source-map --license licenses.txt",
+    "test": "jest",
+    "prepare": "husky install",
+    "prettier": "prettier --write --ignore-unknown *.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dignio/kebab-case-action.git"
+  },
+  "keywords": [
+    "GitHub",
+    "Actions",
+    "JavaScript",
+    "kebab",
+    "snake",
+    "camel",
+    "case"
+  ],
+  "author": "Bjarne Oeverli",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dignio/kebab-case-action/issues"
+  },
+  "homepage": "https://github.com/dignio/kebab-case-action#readme",
+ "lint-staged": {
+    "*.js": "prettier --write --ignore-unknown"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.5",
+    "lodash.camelcase": "^4.3.0",
+    "lodash.kebabcase": "^4.1.1",
+    "lodash.snakecase": "^4.1.1"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.33.1",
+    "husky": "^7.0.4",
+    "jest": "^27.2.5",
+    "lint-staged": "^12.3.2",
+    "prettier": "^2.5.1"
+  }
+}

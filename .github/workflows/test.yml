@@ -1,0 +1,38 @@
+name: Testing
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - 'releases/*'
+
+jobs:
+  # unit tests
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: npm ci
+    - run: npm test
+
+  # check the output
+  integration:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Run the letter case action
+      uses: ./
+      id: letter_case
+      with:
+        string: "feature/branch-1337"
+    
+    - name: Check the letter case output
+      shell: bash
+      run: |
+        [ "${{ steps.letter_case.outputs.kebab }}" != "feature-branch-1337" ] && exit 1
+        [ "${{ steps.letter_case.outputs.camel }}" != "featureBranch1337" ] && exit 1
+        [ "${{ steps.letter_case.outputs.snake }}" != "feature_branch_1337" ] && exit 1
+
+        echo "Integration test works as expected"
