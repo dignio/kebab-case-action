@@ -41,6 +41,8 @@ jobs:
         if: ${{ steps.diff.outputs.failure == 'true' }} 
         with:
           message: |
+            @${{ github.event.pull_request.user.login }} - sha: ${{ GITHUB_SHA }}
+            ---
             Did you forget to add the dist folder?
             Please run 'npm run build', and commit the dist/ folder.
           repo-token: ${{ secrets.GITHUB_TOKEN }}
